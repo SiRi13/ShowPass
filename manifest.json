@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "ShowPassContext",
+  "description": "This extension will display the letters in a password field",
+  "version": "0.1",
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "contextMenus"
+  ],
+
+  "icons": {
+    "19": "icon.png"
+  },
+
+  "background": {
+    "scripts": ["showPass.js"]
+  },
+
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content_script.js"]
+  }]
+}
